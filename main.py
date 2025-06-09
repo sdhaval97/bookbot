@@ -17,7 +17,7 @@ def main():
 	print("============ BOOKBOT ============")
 	print(f"Analyzing book found at {path_to_book} ...")
 
-	book_text = get_book_text('')
+	book_text = get_book_text(path_to_book)
 	
 	print("----------- Word Count ----------")
 	counter = get_num_words(book_text)
