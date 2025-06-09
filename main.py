@@ -6,10 +6,21 @@ def get_book_text(file_path):
 		return f.read()
 
 def main():
-	book_text = get_book_text('books/frankenstein.txt')
-	counter = get_num_words(book_text)
-	print(f"{counter} words found in the document")
-	char_count = get_char_count(book_text)
-	print(char_count)
+	print("============ BOOKBOT ============")
+	print("Analyzing book found at books/frankenstein.txt...")
 
+	book_text = get_book_text('books/frankenstein.txt')
+	
+	print("----------- Word Count ----------")
+	counter = get_num_words(book_text)
+	print(f"Found {counter} total words")
+	
+	print("----------- Word Count ----------")
+	char_dict = get_char_count(book_text)
+	sorted_chars = sort_characters(char_dict)
+
+    	for entry in sorted_chars:
+        	print(f"{entry['char']}: {entry['num']}")
+
+	print("============= END ===============")
 main()
